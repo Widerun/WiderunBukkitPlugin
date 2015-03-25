@@ -1,0 +1,7 @@
+name: Widerun Race
+main: com.widerun.MainPlugin
+version: {$VersionNumber}
+commands:
+   race:
+      description: This is a demo command.
+      usage: /<command>
