@@ -1,5 +1,6 @@
 package com.widerun;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -8,6 +9,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainPlugin extends JavaPlugin {
 
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		getServer().getPluginManager().registerEvents(new EventsHandler(), this);
+	}
+	
+	
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
@@ -21,7 +30,7 @@ public class MainPlugin extends JavaPlugin {
 				World world = RaceWorldGenerator.createEmptyWorld();
 				
 				
-				player.teleport(world.getSpawnLocation().clone().add(0.5, 0.5, 0.5));
+				player.teleport(new Location(world, 0, 65, 0));
 				
 			}
 			
